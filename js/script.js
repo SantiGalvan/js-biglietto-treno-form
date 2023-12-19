@@ -28,6 +28,11 @@ const inputUserKm = document.getElementById('user-km');
 const inputUserRange = document.getElementById('range');
 const buttonGo = document.getElementById('button-go');
 const buttonDelete = document.getElementById('button-delete');
+const userTicketName = document.getElementById('user-ticket');
+const ticketRate = document.getElementById('rate');
+const userCarriage = document.getElementById('carriage');
+const userTicketCode = document.getElementById('code');
+const ticketPrice = document.getElementById('ticket-price');
 
 console.log(inputUser, inputUserKm, inputUserRange, buttonGo, buttonDelete);
 
@@ -78,10 +83,13 @@ buttonGo.addEventListener('click', function () {
             if (userRange === 'under18') {
                 price -= (price * 0.2);
                 console.log('Il prezzo del biglietto scontato del 20% è di: ', price, '€');
+                ticketRate.innerText = 'Biglietto Under 18';
             } else if (userRange === 'over65') {
                 price -= (price * 0.4);
                 console.log('Il prezzo del biglietto scontato del 40% è di: ', price, '€');
+                ticketRate.innerText = 'Biglietto Over 65';
             }
+
         }
     }
 
@@ -91,6 +99,14 @@ buttonGo.addEventListener('click', function () {
         // Trasformo il prezzo con solo 2 decimi
         price = parseFloat(price.toFixed(2));
         console.log('Il prezzo del biglietto è di: ', price, '€');
+    }
+
+    if (isValid) {
+        userTicketName.innerText = userName;
+        ticketRate.innerText = 'Biglietto Standard';
+        userCarriage.innerText = Math.floor(Math.random() * 7) + 1;
+        userTicketCode.innerText = Math.floor(Math.random() * 1000000) + 1;
+        ticketPrice.innerText = price + '€';
     }
 
 })
