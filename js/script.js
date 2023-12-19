@@ -96,5 +96,7 @@ buttonGo.addEventListener('click', function () {
 })
 
 // Premendo il tasto annulla
-
+buttonDelete.addEventListener('click', function () {
+    location.reload();
+})
 
