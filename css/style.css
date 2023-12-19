@@ -11,6 +11,30 @@ body {
     background-color: #b91450;
 }
 
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+/* Utiles */
 .cs-bg-wh {
     background-color: #fff;
+}
+
+
+/*? Main */
+
+/* Section User */
+label {
+    color: firebrick;
+    margin-bottom: 10px;
+}
+
+input,
+select {
+    width: 80%;
 }
