@@ -38,6 +38,28 @@ buttonGo.addEventListener('click', function () {
     const userKm = parseInt(inputUserKm.value);
     const userRange = inputUserRange.value;
     console.log(userName, userKm, userRange);
+
+    // Calcolo il prezzo del biglietto
+    let price = userKm * 0.21;
+    console.log('Il prezzo del biglietto è di: ', price, '€');
+
+    // - 6 Controllo se l'utente ha diritto a uno sconto
+    if (userRange === 'under18' || userRange === 'over65') {
+
+        // - 7 Se l'utente ne ha diritto applico lo sconto
+        if (userRange === 'under18') {
+            price = price - (price * 0.2);
+        } else if (userRange === 'over65') {
+            price = price - (price * 0.4);
+        }
+    }
+
+    console.log('Il prezzo del biglietto è di: ', price, '€');
+
+    // - 8 Trasformo il prezzo con solo 2 decimi
+    price = parseFloat(price.toFixed(2));
+    console.log('Il prezzo del biglietto è di: ', price, '€');
+
 })
 
 
