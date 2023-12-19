@@ -48,9 +48,9 @@ buttonGo.addEventListener('click', function () {
 
         // - 7 Se l'utente ne ha diritto applico lo sconto
         if (userRange === 'under18') {
-            price = price - (price * 0.2);
+            price -= (price * 0.2);
         } else if (userRange === 'over65') {
-            price = price - (price * 0.4);
+            price -= (price * 0.4);
         }
     }
 
