@@ -89,6 +89,8 @@ buttonGo.addEventListener('click', function () {
                 price -= (price * 0.4);
                 console.log('Il prezzo del biglietto scontato del 40% è di: ', price, '€');
                 ticketRate.innerText = 'Biglietto Over 65';
+            } else {
+                ticketRate.innerText = 'Biglietto Standard';
             }
 
         }
@@ -97,7 +99,6 @@ buttonGo.addEventListener('click', function () {
         price = parseFloat(price.toFixed(2));
         console.log('Il prezzo del biglietto è di: ', price, '€');
         userTicketName.innerText = userName;
-        ticketRate.innerText = 'Biglietto Standard';
         userCarriage.innerText = Math.floor(Math.random() * 7) + 1;
         userTicketCode.innerText = Math.floor(Math.random() * 1000000) + 1;
         ticketPrice.innerText = price + '€';
