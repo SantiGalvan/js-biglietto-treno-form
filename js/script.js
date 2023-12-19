@@ -89,10 +89,12 @@ buttonGo.addEventListener('click', function () {
                 price -= (price * 0.4);
                 console.log('Il prezzo del biglietto scontato del 40% è di: ', price, '€');
                 ticketRate.innerText = 'Biglietto Over 65';
-            } else {
-                ticketRate.innerText = 'Biglietto Standard';
             }
 
+        }
+
+        if (userRange === 'adulto') {
+            ticketRate.innerText = 'Biglietto Standard';
         }
 
         buttonAction.classList.remove('d-none')
