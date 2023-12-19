@@ -32,7 +32,7 @@
             <div class="row gy-3 cs-bg-wh pb-3">
                 <div class="col-4 d-flex flex-column text-center">
                     <label for="user">Nome e Cognome</label>
-                    <input type="text" id="user">
+                    <input type="text" id="user" name="name">
                 </div>
                 <div class="col-4 d-flex flex-column text-center">
                     <label for="user.km">Km da percorrere</label>
@@ -41,9 +41,10 @@
                 <div class="col-4 d-flex flex-column text-center">
                     <label for="range">Fascia d'età</label>
                     <select name="" id="range">
+                        <option value="empty">...</option>
                         <option value="adulto">Adulto</option>
-                        <option value="under 18">Under 18</option>
-                        <option value="over 65">Over 65</option>
+                        <option value="under18">Under 18</option>
+                        <option value="over65">Over 65</option>
                     </select>
                 </div>
                 <div class="col-6 d-flex justify-content-end">
