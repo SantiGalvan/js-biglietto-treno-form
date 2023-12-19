@@ -8,4 +8,9 @@
 /* General */
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: #b91450;
+}
+
+.cs-bg-wh {
+    background-color: #fff;
 }
