@@ -19,12 +19,25 @@ h1 {
     padding-bottom: 20px;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
+
+p {
+    font-size: 18px;
+    color: #85a0d9;
+}
+
 
 /* Utiles */
 .cs-bg-wh {
     background-color: #fff;
 }
 
+.cs-t-bl {
+    color: #6386d9;
+}
 
 /*? Main */
 
@@ -32,9 +45,62 @@ h1 {
 label {
     color: firebrick;
     margin-bottom: 10px;
+    font-size: 20px;
 }
 
 input,
 select {
     width: 80%;
+}
+
+/* Section Ticket */
+.cs-img {
+    display: block;
+    width: 350px;
+    height: 350px;
+}
+
+.right-extern {
+    background-color: goldenrod;
+    height: 40px;
+    width: 100%;
+}
+
+.right-main {
+    background-color: #ffece6;
+    height: calc(350px - 40px * 2);
+}
+
+.ticket-right {
+    flex-grow: 1;
+    height: 350px;
+}
+
+.main-user {
+    flex-grow: 1;
+}
+
+.main-data {
+    flex-basis: 40%;
+    background-color: #fddbcf;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-code {
+    border-left: 2px solid #f99f33;
+    border-bottom: 2px solid #f99f33;
+    flex-grow: 1;
+}
+
+.ticket-price {
+    flex-basis: 50%;
+    border-left: 2px solid #f99f33;
+}
+
+.ticket-price p,
+.ticket-code p {
+    font-size: 25px;
+    font-weight: 600;
 }
