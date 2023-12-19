@@ -29,17 +29,17 @@
     <main>
 
         <!-- Section User -->
-        <section>
+        <section id="user-section">
             <div class="container">
                 <h1 class="text-center my-3">Calcola il prezzo del tuo biglietto</h1>
                 <div class="row gy-3 cs-bg-wh pb-3">
                     <div class="col-4 d-flex flex-column text-center">
                         <label for="user">Nome e Cognome</label>
-                        <input type="text" id="user" name="name">
+                        <input type="text" id="user" name="name" class="text-center">
                     </div>
                     <div class="col-4 d-flex flex-column text-center">
                         <label for="user-km">Km da percorrere</label>
-                        <input type="number" id="user-km" min="1" max="1000">
+                        <input type="number" id="user-km" min="1" max="1000" class="text-center">
                     </div>
                     <div class="col-4 d-flex flex-column text-center">
                         <label for="range">Fascia d'età</label>
@@ -61,7 +61,7 @@
         </section>
 
         <!-- Section Ticket -->
-        <section>
+        <section id="ticket-section" class="d-none">
             <div class="container">
                 <h1 class="text-center my-3">Il tuo biglietto</h1>
                 <div class="row cs-bg-wh pb-3">
