@@ -22,45 +22,22 @@ Scompongo il problema
 */
 
 // - 1 Prendo l'elemento dal DOM
-const paragrph = document.getElementById('content');
-console.log('id: ', paragrph);
+//- 2 Inserisco 2 input e 1 select per chiedere il nome e cognome, i km da percorrere e se è un under 18 o un over 65, per eventuali sconti
+const inputUser = document.getElementById('user');
+const inputUserKm = document.getElementById('user-km');
+const inputUserRange = document.getElementById('range');
+const buttonGo = document.getElementById('button-go');
+const buttonDelete = document.getElementById('button-delete');
 
-// - 2 Chiedo all'utente il km da percorrere
-const userKm = parseInt(prompt('Quanti km devi percorrere?', '57'));
-console.log('Km da percorrere:', userKm);
+console.log(inputUser, inputUserKm, inputUserRange, buttonGo, buttonDelete);
 
-// - 3 Chiediamo all'utente l'età
-const userAge = parseInt(prompt('Quanti anni hai?', '11'));
-console.log('La tua età è:', userAge, 'anni');
-
-// - 4 Calcolo il prezzo del biglietto
-let price = userKm * 0.21;
-console.log('Il prezzo del biglietto è di: ', price, '€');
-
-// - 5 Controllo se l'utente ha scritto solo numeri
-if (isNaN(userAge) || isNaN(userKm) || userAge <= 0 || userKm <= 0) {
-    alert('Devi inserire un dato corretto')
-} else {
-
-    // - 6 Controllo se l'utente ha diritto a uno sconto
-    if (userAge < 18 || userAge > 65) {
-
-        // - 7 Se l'utente ne ha diritto applico lo scont
-        if (userAge < 18) {
-            price = price - (price * 0.2);
-        } else if (userAge > 65) {
-            price = price - (price * 0.4);
-        }
-    }
-
-    console.log('Il prezzo del biglietto è di: ', price, '€');
-
-    // - 8 Trasformo il prezzo con solo 2 decimi
-    price = parseFloat(price.toFixed(2));
-    console.log('Il prezzo del biglietto è di: ', price, '€');
-
-    // - 9 Inserisco il prezzo nella pagina
-    paragrph.innerHTML = `Il prezzo del biglietto è di: <strong>${price}</strong> €`;
-}
+//
+buttonGo.addEventListener('click', function () {
+    // Recupero i valori dall'input
+    const userName = inputUser.value.trim();
+    const userKm = parseInt(inputUserKm.value);
+    const userRange = inputUserRange.value;
+    console.log(userName, userKm, userRange);
+})
 
 
