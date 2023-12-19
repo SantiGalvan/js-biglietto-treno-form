@@ -43,22 +43,46 @@ buttonGo.addEventListener('click', function () {
     let price = userKm * 0.21;
     console.log('Il prezzo del biglietto è di: ', price, '€');
 
-    // - 6 Controllo se l'utente ha diritto a uno sconto
-    if (userRange === 'under18' || userRange === 'over65') {
+    // Validation
+    let isValid = true;
 
-        // - 7 Se l'utente ne ha diritto applico lo sconto
-        if (userRange === 'under18') {
-            price -= (price * 0.2);
-        } else if (userRange === 'over65') {
-            price -= (price * 0.4);
+    if (userName === '') {
+        alert('Devi inserire il tuo nome e cognome');
+        isValid = false;
+    }
+
+    if (isNaN(userKm) || userKm < 1 || userKm > 1000) {
+        alert('Devi inserire i chilometri da percorrere');
+        isValid = false;
+    }
+
+    if (userRange === 'empty') {
+        alert('Devi inserire un valore tra i tre elencati');
+        isValid = false;
+    }
+
+    // Controllo se l'utente ha diritto a uno sconto
+    if (isValid) {
+        if (userRange === 'under18' || userRange === 'over65') {
+
+            // Se l'utente ne ha diritto applico lo sconto
+            if (userRange === 'under18') {
+                price -= (price * 0.2);
+                console.log('Il prezzo del biglietto scontato del 20% è di: ', price, '€');
+            } else if (userRange === 'over65') {
+                price -= (price * 0.4);
+                console.log('Il prezzo del biglietto scontato del 40% è di: ', price, '€');
+            }
         }
     }
 
-    console.log('Il prezzo del biglietto è di: ', price, '€');
+    if (isValid) {
 
-    // - 8 Trasformo il prezzo con solo 2 decimi
-    price = parseFloat(price.toFixed(2));
-    console.log('Il prezzo del biglietto è di: ', price, '€');
+
+        // Trasformo il prezzo con solo 2 decimi
+        price = parseFloat(price.toFixed(2));
+        console.log('Il prezzo del biglietto è di: ', price, '€');
+    }
 
 })
 
