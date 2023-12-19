@@ -33,6 +33,7 @@ const ticketRate = document.getElementById('rate');
 const userCarriage = document.getElementById('carriage');
 const userTicketCode = document.getElementById('code');
 const ticketPrice = document.getElementById('ticket-price');
+const buttonAction = document.getElementById('ticket-section');
 
 console.log(inputUser, inputUserKm, inputUserRange, buttonGo, buttonDelete);
 
@@ -91,17 +92,10 @@ buttonGo.addEventListener('click', function () {
             }
 
         }
-    }
 
-    if (isValid) {
-
-
-        // Trasformo il prezzo con solo 2 decimi
+        buttonAction.classList.remove('d-none')
         price = parseFloat(price.toFixed(2));
         console.log('Il prezzo del biglietto è di: ', price, '€');
-    }
-
-    if (isValid) {
         userTicketName.innerText = userName;
         ticketRate.innerText = 'Biglietto Standard';
         userCarriage.innerText = Math.floor(Math.random() * 7) + 1;
