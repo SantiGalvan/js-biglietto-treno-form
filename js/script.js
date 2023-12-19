@@ -49,16 +49,25 @@ buttonGo.addEventListener('click', function () {
     if (userName === '') {
         alert('Devi inserire il tuo nome e cognome');
         isValid = false;
+        return
     }
 
-    if (isNaN(userKm) || userKm < 1 || userKm > 1000) {
+    if (isNaN(userKm) || userKm < 1) {
         alert('Devi inserire i chilometri da percorrere');
         isValid = false;
+        return
+    }
+
+    if (userKm > 1000) {
+        alert('Ci dispiace, ma non abbiamo tratte sopra i 1000km');
+        isValid = false;
+        return
     }
 
     if (userRange === 'empty') {
         alert('Devi inserire un valore tra i tre elencati');
         isValid = false;
+        return
     }
 
     // Controllo se l'utente ha diritto a uno sconto
@@ -85,5 +94,7 @@ buttonGo.addEventListener('click', function () {
     }
 
 })
+
+// Premendo il tasto annulla
 
 
